@@ -1,0 +1,53 @@
+body {
+	padding-top: 70px;
+	font-family: Roboto;
+}
+
+.container {
+	text-align: center;
+}
+
+.navbar-default {
+	background: #1a1e26;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: white;
+}
+
+.navbar-default .navbar-brand {
+	color: white;
+}
+
+.jumbotron {
+	background: #ecf0f1;
+}
+
+#heading{
+	font-size: 9rem;
+}
+
+#subheading {
+	font-style: italic;
+}
+
+#caption {
+	font-size: 1.1em;
+	padding-top: 5px;
+}
+
+#intro {
+	padding-top: 10px;
+	text-align: left;
+}
+
+#facts {
+	text-align: left;
+	margin: 40px 20px 10px 20px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
