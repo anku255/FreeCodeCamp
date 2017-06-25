@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Local Weather</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container container-table">
+    <div class="row vertical-center-row">
+      <div id="card" class="card text-center col-md-6 col-md-offset-3">
+        <div id="place"></div>
+        <div id="spinner"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></div>
+        <div><canvas id="icon"></canvas><span id="spinner"></span></div>
+        <div><span class="temp-c"></span><span class="temp-f hidden"></span></div>
+        <div class="row details">
+          <div id="humidity" class="col-sm-4 center"></div>
+          <div id="degree" class="col-sm-4 center">°<span id="celcius" class="selected">C</span>|°<span id="farenheit">F</span></div>
+          <div id="condition" class="col-sm-4 center"></div>
+        </div>
+      </div>  
+    </div>    
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cdn.rawgit.com/darkskyapp/skycons/41ff9332/skycons.js"></script>
+  <script type="text/javascript" src="app.js" ></script>
+</body>
+</html>

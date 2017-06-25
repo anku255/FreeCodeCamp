@@ -1,0 +1,58 @@
+body {
+  background: #3f51b5;
+  color: white;
+  font-family: 'Roboto', serif;
+}
+
+.card {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  border-radius: 2px;
+  background-clip: padding-box;
+  background: #536dfe;
+}
+
+.card-content {
+  border-radius: 0 0 2px 2px;
+  background-clip: padding-box;
+  box-sizing: border-box;
+}
+
+ html, body, .container-table {
+    height: 100%;
+}
+.container-table {
+    display: table;
+}
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#place {
+  margin: 5px auto;
+  font-size: 2em;
+}
+
+.temp-c, .temp-f {
+  font-size: 3em;
+}
+
+.selected {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}
+
+.details {
+  font-size: 1.5em;
+  margin: 5px auto;
+}
+
+#spinner {
+  font-size: 2em;
+  padding-top: 50px;
+}
