@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wikipedia Search App</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Wikipedia Search</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="form">
+      <div id="searchBox" class="search-wrapper card">
+        <input id="searchInput" type="search">
+      </div>
+
+      <div class="searchButtons">
+        <button id="search-btn" class="waves-effect waves-light btn">Search</button>
+        <a class="waves-effect waves-light btn" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Surprise Me!</a>
+      </div>
+    </div>
+
+    <section id="search-result">
+    <!-- To be filled by JS -->
+    </section>
+
+</div>
+  
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>

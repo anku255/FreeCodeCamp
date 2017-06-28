@@ -1,0 +1,87 @@
+body {
+  font-family: 'Roboto';
+}
+
+nav {
+  background-color: #212121;
+}
+
+nav .brand-logo:hover {
+  text-decoration: none;
+}
+
+.form {
+  margin-top: 20%;
+}
+
+#searchBox {
+  color: rgba(0,0,0,0.87);
+  line-height: 44px;
+  margin: 50px 12px 0 12px;
+  text-align: left;
+  /*max-width: 90%;*/
+  /*height: 54px;*/
+  transition: 0.3s linear;
+}
+
+#searchInput {
+  margin: 0;
+  display: inline;
+  border: 1px solid rgba(0,0,0,0);
+  font-size: 20px;
+  box-sizing: border-box;
+}
+
+#searchInput:focus {
+  border-bottom: 10px solid rgba(0,0,0,0);
+}
+
+.searchButtons {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.btn {
+  background: #212121;
+}
+
+.btn:focus {
+  background: #212121;
+  color: #ffffff;
+}
+
+.btn:hover {
+  background: #333842;
+  color: #ffffff;
+}
+
+article {
+  padding: 5px 10px;
+}
+
+/* Styling the Jquery auto-completon */
+.ui-autocomplete {
+    position: absolute;
+    z-index: 1000;
+    cursor: default;
+    padding: 0;
+    margin: 25% 20%;
+    list-style: none;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+       -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.ui-autocomplete > li {
+  padding: 3px 20px;
+}
+.ui-autocomplete > li.ui-state-focus {
+  background-color: #DDD;
+}
+.ui-helper-hidden-accessible {
+  display: none;
+}
