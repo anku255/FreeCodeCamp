@@ -1,0 +1,55 @@
+body {
+  background: #19171C;
+  font-family: 'Roboto';
+  color: #616161;
+}
+
+nav {
+  background-color: #6441A4;
+}
+
+nav .brand-logo:hover {
+  text-decoration: none;
+}
+
+.tabs .tab a {
+ color: #0E9DD9;
+}
+
+.tabs .tab a:hover, .tabs .tab a.active {
+  color: #6441A4;
+  text-decoration: none;
+}
+
+.tabs .indicator {
+  background-color: #6441A4;
+}
+
+.collection .collection-item.avatar {
+  min-height: 0;
+}
+
+.collection {
+  margin: 0;
+}
+
+.row .col {
+  padding: 0;
+}
+
+a {
+  color: #6441A4;
+}
+
+#status {
+  padding-top: 20px;
+  margin: 0 auto;
+}
+
+.redColor {
+  color: red;
+}
+
+.greenColor {
+  color: green;
+}

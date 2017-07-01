@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twitch TV API</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Twitch Streamers</a>
+    </div>
+  </nav>
+  <div class="container">
+
+  <div id="status" class="row">
+    <div class="col-xs-12">
+      <ul class="tabs">
+        <li class="tab col s4"><a class="active" href="#1">All</a></li>
+        <li class="tab col s4"><a href="#2">Online</a></li>
+        <li class="tab col s4"><a href="#3">Offline</a></li>
+      </ul>
+    <div id="1" class="col s12">
+      <ul id="all" class="collection">
+        <!-- To be filled by JS -->
+      </ul>
+    </div>
+      <div id="2" class="col s12">
+        <ul id="online" class="collection">
+          <!-- To be fileld by JS -->
+        </ul>
+      </div>
+      <div id="3" class="col s12">
+        <ul id="offline" class="collection">
+          <!-- To be filled by JS -->
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
