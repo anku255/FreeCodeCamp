@@ -1,0 +1,24 @@
+body > .container {
+  border: 2px solid black;
+  width: 250px;
+}
+
+.btn-default {
+  border: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  height: 34px;
+  color: #fff;
+  background: #404040;
+}
+
+.op_key, .eq_key {
+  background: #606060;
+}
+
+#display {
+  text-align: right;
+  color: #606060;
+  font-size: 2em;
+}
