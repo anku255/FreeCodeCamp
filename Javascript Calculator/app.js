@@ -11,7 +11,9 @@ Input = {
   // Clear Entry
   CE : 5,
   // Sign Key (±)
-  SIGN: 6
+  SIGN: 6,
+  // Delete Key
+  DEL: 7
 }
 
 // States of the Calculator
@@ -71,6 +73,9 @@ Calculator = {
         else if (keycode === Input.SIGN) {
           changeSign();
         }
+        else if(keycode === Input.DEL) {
+          deleteNum();
+        }
         else if(keycode === Input.OP) {
           this.firstNum = this.display;
           this.op = key;
@@ -93,6 +98,9 @@ Calculator = {
         }
         else if (keycode === Input.SIGN) {
           changeSign();
+        }
+        else if(keycode === Input.DEL) {
+          deleteNum();
         }
         else if(keycode === Input.CE) {
           this.setDisplay("0");
@@ -122,6 +130,9 @@ Calculator = {
         else if (keycode === Input.SIGN) {
           changeSign();
         }
+        else if(keycode === Input.DEL) {
+          deleteNum();
+        }
         else if(keycode === Input.OP) {
           let result = getResult(this.firstNum, this.secondNum, this.op);
           this.firstNum = result;
@@ -140,7 +151,7 @@ Calculator = {
           this.setDisplay("0");
           this.state = States.OPERATOR;
         }
-      break;
+        break;
 
       case States.SECOND_NUM_FLOAT:
         if(keycode === Input.NUM) {
@@ -154,6 +165,9 @@ Calculator = {
         }
         else if (keycode === Input.SIGN) {
           changeSign();
+        }
+        else if(keycode === Input.DEL) {
+          deleteNum();
         }
         else if(keycode === Input.OP) {
           let result = getResult(this.firstNum, this.secondNum, this.op);
@@ -180,6 +194,9 @@ Calculator = {
         else if(keycode === Input.DOT) {
           this.setDisplay("0.");
           this.state = States.FIRST_NUM_FLOAT;
+        }
+        else if(keycode === Input.DEL) {
+          deleteNum();
         }
         else if(keycode === Input.OP) {
           this.firstNum = this.display;
@@ -211,7 +228,6 @@ Calculator = {
     this.setDisplay('0');
   }
 
-
 }
 
 function getResult(numOne, numTwo, op) {
@@ -234,6 +250,14 @@ function changeSign() {
   else
     str = '-' + str;
   Calculator.setDisplay(str);
+}
+
+function deleteNum() {
+  var str = String(Calculator.display);
+  if(str.length>1)
+    Calculator.setDisplay(str.slice(0,-1));
+  else
+    Calculator.setDisplay('0');
 }
 
 $('.digit').on('click', function() {
@@ -262,4 +286,8 @@ $('.allClear').on('click', function() {
 
 $('.sign').on('click', function() {
   Calculator.doTask(Input.SIGN, $(this).html());
+});
+
+$('.delete').on('click', function() {
+  Calculator.doTask(Input.DEL, $(this).html());
 });
