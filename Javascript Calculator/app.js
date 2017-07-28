@@ -9,7 +9,9 @@ Input = {
   // Equals key
   EQ : 4,
   // Clear Entry
-  CE : 5
+  CE : 5,
+  // Sign Key (±)
+  SIGN: 6
 }
 
 // States of the Calculator
@@ -66,6 +68,9 @@ Calculator = {
           this.setDisplay(this.display + '.');
           this.state = States.FIRST_NUM_FLOAT;
         }
+        else if (keycode === Input.SIGN) {
+          changeSign();
+        }
         else if(keycode === Input.OP) {
           this.firstNum = this.display;
           this.op = key;
@@ -85,7 +90,10 @@ Calculator = {
           this.firstNum = this.display;
           this.op = key;
           this.state = States.OPERATOR;
-        } 
+        }
+        else if (keycode === Input.SIGN) {
+          changeSign();
+        }
         else if(keycode === Input.CE) {
           this.setDisplay("0");
           this.state = States.START;
@@ -110,12 +118,15 @@ Calculator = {
         else if(keycode === Input.DOT) {
           this.setDisplay(this.display + '.');
           this.state = States.SECOND_NUM_FLOAT;
-        } 
+        }
+        else if (keycode === Input.SIGN) {
+          changeSign();
+        }
         else if(keycode === Input.OP) {
           let result = getResult(this.firstNum, this.secondNum, this.op);
           this.firstNum = result;
           this.op = key;
-          updateDisplay(result);
+          this.updateDisplay(result);
           this.state = States.OPERATOR;
         }
         else if(keycode === Input.EQ) {
@@ -140,6 +151,9 @@ Calculator = {
           let result = getResult(this.firstNum, this.secondNum, this.op);
           this.setDisplay(result);
           this.state = States.EQ;
+        }
+        else if (keycode === Input.SIGN) {
+          changeSign();
         }
         else if(keycode === Input.OP) {
           let result = getResult(this.firstNum, this.secondNum, this.op);
@@ -213,6 +227,15 @@ function getResult(numOne, numTwo, op) {
   }
 }
 
+function changeSign() {
+  var str = Calculator.display;
+  if(str.match(/-/))
+    str = str.replace('-','');
+  else
+    str = '-' + str;
+  Calculator.setDisplay(str);
+}
+
 $('.digit').on('click', function() {
   Calculator.doTask(Input.NUM, $(this).html());
 });
@@ -235,4 +258,8 @@ $('.clearEntry').on('click', function() {
 
 $('.allClear').on('click', function() {
   Calculator.clearAll();
+});
+
+$('.sign').on('click', function() {
+  Calculator.doTask(Input.SIGN, $(this).html());
 });
