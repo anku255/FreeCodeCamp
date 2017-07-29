@@ -161,6 +161,8 @@ Calculator = {
         } 
         else if(keycode === Input.CE) {
           this.setDisplay("0");
+          this.result = this.firstNum;
+          updateSecondDisplay();
           this.state = States.OPERATOR;
         }
         break;
@@ -193,6 +195,8 @@ Calculator = {
         }
         else if(keycode === Input.CE) {
           this.setDisplay("0");
+          this.result = this.firstNum;
+          updateSecondDisplay();
           this.state = States.OPERATOR;
         }
         break;
