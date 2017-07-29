@@ -17,8 +17,14 @@ body > .container {
   background: #606060;
 }
 
-#display {
+#display_1 {
   text-align: right;
   color: #606060;
-  font-size: 2em;
+  font-size: 2.5em;
+}
+
+#display_2 {
+  text-align: right;
+  color: #606060;
+  font-size: 1.5em;
 }

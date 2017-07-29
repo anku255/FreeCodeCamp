@@ -47,6 +47,8 @@ Calculator = {
   firstNum : '',
   // second number
   secondNum : '',
+  // current result
+  result : '',
   // function to manage a task
   // @param keycode : INPUT KeyCodes
   // @param key: value of key pressed
@@ -79,6 +81,8 @@ Calculator = {
         else if(keycode === Input.OP) {
           this.firstNum = this.display;
           this.op = key;
+          this.result = this.firstNum;
+          updateSecondDisplay();
           this.state = States.OPERATOR;
         } 
         else if(keycode === Input.CE) {
@@ -94,6 +98,8 @@ Calculator = {
         else if(keycode === Input.OP) {
           this.firstNum = this.display;
           this.op = key;
+          this.result = this.firstNum;
+          updateSecondDisplay();
           this.state = States.OPERATOR;
         }
         else if (keycode === Input.SIGN) {
@@ -111,6 +117,9 @@ Calculator = {
       case States.OPERATOR:
         if(keycode === Input.NUM) {
           this.setDisplay(key);
+          this.secondNum = this.display;
+          this.result = getResult();
+          updateSecondDisplay();
           this.state = States.SECOND_NUM;
         } 
         else if(keycode === Input.DOT) {
@@ -122,6 +131,9 @@ Calculator = {
       case States.SECOND_NUM:
         if(keycode === Input.NUM) {
           this.setDisplay(this.display + key);
+          this.secondNum = this.display;
+          this.result = getResult();
+          updateSecondDisplay();
         } 
         else if(keycode === Input.DOT) {
           this.setDisplay(this.display + '.');
@@ -134,7 +146,7 @@ Calculator = {
           deleteNum();
         }
         else if(keycode === Input.OP) {
-          let result = getResult(this.firstNum, this.secondNum, this.op);
+          let result = getResult();
           this.firstNum = result;
           this.op = key;
           this.updateDisplay(result);
@@ -142,7 +154,7 @@ Calculator = {
         }
         else if(keycode === Input.EQ) {
           this.secondNum = this.display;
-          let result = getResult(this.firstNum, this.secondNum, this.op);
+          let result = getResult();
           this.setDisplay(result);
           this.updateDisplay(result);
           this.state = States.EQ;
@@ -156,10 +168,13 @@ Calculator = {
       case States.SECOND_NUM_FLOAT:
         if(keycode === Input.NUM) {
           this.setDisplay(this.display + key);
+          this.secondNum = this.display;
+          this.result = getResult();
+          updateSecondDisplay();
         }
         else if(keycode === Input.EQ) {
           this.secondNum = this.display;
-          let result = getResult(this.firstNum, this.secondNum, this.op);
+          let result = getResult();
           this.setDisplay(result);
           this.state = States.EQ;
         }
@@ -170,7 +185,7 @@ Calculator = {
           deleteNum();
         }
         else if(keycode === Input.OP) {
-          let result = getResult(this.firstNum, this.secondNum, this.op);
+          let result = getResult();
           this.firstNum = result;
           this.op = key;
           this.setDisplay(result);
@@ -184,7 +199,7 @@ Calculator = {
 
       case States.EQ:
         if(keycode === Input.EQ) {
-          let result = getResult(this.display, this.secondNum, this.op);
+          let result = getResult();
           this.setDisplay(result);
         }
         else if(keycode === Input.NUM) {
@@ -217,20 +232,25 @@ Calculator = {
   },
 
   updateDisplay: function(value) {
-    $('#display').html(value);
+    $('#display_1').html(value);
   },
 
   clearAll: function() {
     this.state = States.START;
     this.firstNum;
     this.secondNum;
+    this.result = '';
     this.op;
     this.setDisplay('0');
+    updateSecondDisplay();
   }
 
 }
 
-function getResult(numOne, numTwo, op) {
+function getResult() {
+  let numOne = Calculator.firstNum;
+  let numTwo = Calculator.secondNum;
+  let op = Calculator.op;
   switch(op) {
     case '+':
       return Number(numOne) + Number(numTwo);
@@ -258,6 +278,11 @@ function deleteNum() {
     Calculator.setDisplay(str.slice(0,-1));
   else
     Calculator.setDisplay('0');
+}
+
+function updateSecondDisplay() {
+  var str = Calculator.result;
+  $('#display_2').html(str);
 }
 
 $('.digit').on('click', function() {
