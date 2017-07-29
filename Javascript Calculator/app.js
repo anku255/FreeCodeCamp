@@ -83,6 +83,7 @@ Calculator = {
           this.op = key;
           this.result = this.firstNum;
           updateSecondDisplay();
+          selectOperator();
           this.state = States.OPERATOR;
         } 
         else if(keycode === Input.CE) {
@@ -100,6 +101,7 @@ Calculator = {
           this.op = key;
           this.result = this.firstNum;
           updateSecondDisplay();
+          selectOperator();
           this.state = States.OPERATOR;
         }
         else if (keycode === Input.SIGN) {
@@ -150,6 +152,7 @@ Calculator = {
           this.firstNum = result;
           this.op = key;
           this.updateDisplay(result);
+          selectOperator();
           this.state = States.OPERATOR;
         }
         else if(keycode === Input.EQ) {
@@ -191,6 +194,7 @@ Calculator = {
           this.firstNum = result;
           this.op = key;
           this.setDisplay(result);
+          selectOperator();
           this.state = States.OPERATOR;
         }
         else if(keycode === Input.CE) {
@@ -219,7 +223,8 @@ Calculator = {
         }
         else if(keycode === Input.OP) {
           this.firstNum = this.display;
-          this.op = key;;
+          this.op = key;
+          selectOperator();
           this.state = States.OPERATOR;
         }
         else if(keycode === Input.CE) {
@@ -244,9 +249,10 @@ Calculator = {
     this.firstNum;
     this.secondNum;
     this.result = '';
-    this.op;
+    this.op = '';
     this.setDisplay('0');
     updateSecondDisplay();
+    selectOperator();
   }
 
 }
@@ -287,6 +293,31 @@ function deleteNum() {
 function updateSecondDisplay() {
   var str = Calculator.result;
   $('#display_2').html(str);
+}
+
+// Change background of selected operators
+var selected = "";
+function selectOperator() {
+  $(selected).removeClass("selected");
+  var op = Calculator.op;
+  switch(op) {
+    case '+':
+      $('.plus').addClass('selected');
+      selected = '.plus';
+      break;
+    case '-':
+      $('.minus').addClass('selected');
+      selected = '.minus';
+      break;
+    case 'x':
+      $('.multiply').addClass('selected');
+      selected = '.multiply';
+      break;
+    case '÷':
+      $('.divide').addClass('selected');
+      selected = '.divide';
+      break;
+  }
 }
 
 $('.digit').on('click', function() {
