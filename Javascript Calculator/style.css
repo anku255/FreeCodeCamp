@@ -1,6 +1,16 @@
+body {
+  background: #e2e1e0;
+  font-family: 'Roboto';
+}
 body > .container {
-  border: 2px solid black;
-  width: 250px;
+  width: 300px;
+  padding: 0;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.row{
+  text-align: center;
+  margin: 0 auto;
 }
 
 .btn-default {
@@ -8,8 +18,11 @@ body > .container {
   margin: 0;
   padding: 0;
   border-radius: 0;
-  height: 34px;
+  width: 75px;
+  height: 50px;
+  line-height: 50px;
   color: #fff;
+  font-size: 1.1em;
   background: #404040;
 }
 
@@ -17,15 +30,30 @@ body > .container {
   background: #606060;
 }
 
+.title {
+  margin: 10px auto;
+  font-size: 2em;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+}
+
 #display_1 {
   text-align: right;
   color: #606060;
+  width: 300px;
+  padding: 0 5px;
+  background: #fff;
   font-size: 2.5em;
+  /*scroller*/
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 #display_2 {
+  width: 300px;
   text-align: right;
   color: #606060;
+  background: #fff;
   font-size: 1.5em;
 }
 
