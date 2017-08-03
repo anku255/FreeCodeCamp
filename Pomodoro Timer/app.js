@@ -30,8 +30,8 @@ var Timer = function(duration) {
 
 // Variable declartion
 let pause = true;
-let workTime = 1;
-let breakTime = 1;
+let workTime = 25;
+let breakTime = 5;
 let minutes = workTime;
 let seconds = 0;
 let interval = null; // interval ID of setInterval function
@@ -66,13 +66,23 @@ count = function() {
 }
 
 function updateDisplay() {
-  timer.setText(minutes + ":" + seconds);
+  timer.setText(getTimerText());
 }
 
 // returns text for timer after converting minutes and seconds
 // in double digits
 function getTimerText() {
-
+  let result = '';
+  if(minutes.toString().length === 1)
+    result = '0' + minutes;
+  else
+    result = minutes;
+  result += ':';
+  if(seconds.toString().length === 1)
+    result += '0' + seconds;
+  else
+    result += seconds;
+  return result;
 }
 
 // Setting up Event Listeners
