@@ -1,0 +1,41 @@
+#container {
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+}
+
+.box {
+  max-width: 500px;
+  max-height: 300px;
+  margin: 0 auto;
+  border: 1px solid #000;
+}
+
+#title {
+  margin: 0 auto;
+  text-align: center;
+}
+#break, #work {
+  margin: 0 auto;
+  text-align: center;
+}#container {
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+}
+
+.box {
+  max-width: 500px;
+  max-height: 300px;
+  margin: 0 auto;
+  border: 1px solid #000;
+}
+
+#title {
+  margin: 0 auto;
+  text-align: center;
+}
+#break, #work {
+  margin: 0 auto;
+  text-align: center;
+}
