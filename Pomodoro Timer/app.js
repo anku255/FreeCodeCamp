@@ -2,18 +2,19 @@
 // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
 var Timer = function(duration) {
   return new ProgressBar.Circle(container, {
-    strokeWidth: 3,
+    strokeWidth: 3.2,
     easing: 'linear',
     duration: duration,
-    color: '#FFEA82',
-    trailColor: '#eee',
-    trailWidth: 1,
+    color: '#E91E63',
+    trailColor: '#FCE4EC',
+    trailWidth: 1.2,
     svgStyle: null,
     text: {
       value: '25:00',
       style: {
-        color: '#000',
+        color: '#fff',
         position: 'absolute',
+        'font-size': '2em',
         left: '50%',
         top: '50%',
         padding: 0,
