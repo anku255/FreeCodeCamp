@@ -41,3 +41,13 @@ a.waves-effect.waves-light.btn{
 .text-center {
   text-align: center;
 }
+
+/*  Card Action */
+.card .card-action {
+  padding: 10px 15px;
+}
+
+.fa {
+  font-size: 22px;
+  color: black;
+}
