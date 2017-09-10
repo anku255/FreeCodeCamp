@@ -36,3 +36,8 @@ div > p{
 a.waves-effect.waves-light.btn{
   margin-left: 4px;
 }
+
+/* Set text alignment center */
+.text-center {
+  text-align: center;
+}
