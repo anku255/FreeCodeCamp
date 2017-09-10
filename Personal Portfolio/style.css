@@ -1,0 +1,38 @@
+nav {
+  background-color: #292929;
+}
+.navbar {
+  margin-bottom: 0;
+}
+#home {
+  background-image: url(https://drive.google.com/uc?export=download&id=0B4kALUiFlM-OSkRXX01Hc0k2YUE);
+  height: 600px;
+  width: 100%;
+  display: table;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+/*vertical center the text*/
+#home > div {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+div .row {
+  padding: 20px;
+}
+
+/* Message for Contact Form */
+div > p{
+  padding: 50px 20px;
+  font-size: 20px;
+}
+
+/* Submit button */
+a.waves-effect.waves-light.btn{
+  margin-left: 4px;
+}
