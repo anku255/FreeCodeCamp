@@ -52,6 +52,11 @@ div .card-action > a > i.fa {
   color: black;
 }
 
+/* Card Title */
+div .card .card-title {
+  font-weight: 400;
+}
+
 /* hr style */
 
 hr {
