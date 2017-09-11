@@ -26,6 +26,14 @@ div .row {
   padding: 20px;
 }
 
+/* About Me */
+#bio {
+  padding: 15px 10px;
+}
+h4{
+  font-size: 2em;
+}
+
 /* Message for Contact Form */
 div > p{
   padding: 50px 20px;
