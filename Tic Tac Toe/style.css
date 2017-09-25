@@ -5,7 +5,7 @@
 }
 
 .modal-header {
-  background-color: #155AF0;
+  background-color: #4CAF50;
   width: 100%;
   height: 100%;
   color: #EAEAEA;
@@ -24,6 +24,7 @@
   padding: 30px;
   margin: 10px 0;
   text-align: center;
+  color: #4CAF50;
 }
 
 .modal-footer {
@@ -39,7 +40,12 @@
 }
 
 .modal-footer button:hover {
-  background-color: #08BDEB;
+  background-color: #FFC107;
+  color: white;
+}
+
+body {
+  background: #4CAF50;
   color: white;
 }
 
@@ -57,7 +63,7 @@ table {
 table tr td {
   width: 100px;
   height: 100px;
-  border: 2px solid black;
+  border: 2px solid white;
   font-size: 70px;
   font-family: "Comic Sans MS", cursive, sans-serif;
   text-align: center;

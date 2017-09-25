@@ -42,7 +42,6 @@ function takeTurn() {
         // If the game is not tied then call turn for computer
         if (!checkTiedGame()) {
             let bestMove = miniMax(mainBoard, computer);
-            console.log(bestMove);
             turn(bestMove.index, computer);
         }
     }
@@ -78,7 +77,7 @@ function checkWin(board, player) {
 // change bg-color of winning comb and removes the onClickListener
 function gameOver(winObj) {
     // choose color for player
-    let color = (winObj.player === human) ? 'blue' : 'red';
+    let color = (winObj.player === human) ? '#1AEE21' : '#F44336';
     for (let cellID of winObj.index) {
         cells[cellID].style.backgroundColor = color;
     }
@@ -98,7 +97,7 @@ function checkTiedGame() {
     if (emptyCells(mainBoard).length === 0) {
     // change the bg of every cell and remove onClickListern
         for (let cell of cells) {
-            cell.style.backgroundColor = 'green';
+            cell.style.backgroundColor = '#607D8B';
             cell.removeEventListener('click', takeTurn, false);
         }
         return true;
