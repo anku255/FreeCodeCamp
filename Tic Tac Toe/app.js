@@ -1,6 +1,6 @@
 let mainBoard;
-let human = '';
-let computer = '';
+let human = '<span class="fa fa-times"></span>';
+let computer = '<span class="fa fa-circle-o"></span>';
 let winningComb = [
     [0, 1, 2],
     [3, 4, 5],
