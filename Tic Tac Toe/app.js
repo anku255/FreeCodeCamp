@@ -1,6 +1,6 @@
 let mainBoard;
-let human = '0';
-let computer = 'X';
+let human = '';
+let computer = '';
 let winningComb = [
     [0, 1, 2],
     [3, 4, 5],
@@ -22,13 +22,11 @@ function startGame() {
     $('#gameModal').modal('show');
     // Initialize the mainBoard from 0-8
     mainBoard = Array.from(Array(9).keys());
-    // hide endgame message
-    document.querySelector('.endgame').style.display = 'none';
     // remove background color and text from each cell
     // also add an onClickListener
     for (let cell of cells) {
         cell.style.removeProperty('background-color');
-        cell.innerText = '';
+        cell.innerHTML = '';
         cell.addEventListener('click', takeTurn, false);
     }
 }
@@ -50,7 +48,7 @@ function takeTurn() {
 // Set the given cell to X or 0
 function turn(cellID, player) {
     mainBoard[cellID] = player;
-    cells[cellID].innerText = player;
+    cells[cellID].innerHTML = player;
     // check if the game is won
     let gameWon = checkWin(mainBoard, player);
     if (gameWon)
@@ -85,6 +83,7 @@ function gameOver(winObj) {
     for (let cell of cells) {
         cell.removeEventListener('click', takeTurn, false);
     }
+    declareWinner(winObj.player === human ? 'You Win!' : 'You Lose.');
 }
 
 // returns an array of empty cells
@@ -100,6 +99,7 @@ function checkTiedGame() {
             cell.style.backgroundColor = '#607D8B';
             cell.removeEventListener('click', takeTurn, false);
         }
+        declareWinner('The game is tied!');
         return true;
     }
     return false;
@@ -181,12 +181,18 @@ function miniMax(newBoard, player) {
 // sets the player's symbol and then starts the game
 function setSymbol(id) {
     if (id === 'X') {
-        human = 'X';
-        computer = '0';
+        human = '<span class="fa fa-times"></span>';
+        computer = '<span class="fa fa-circle-o"></span>';
     } else {
-        human = '0';
-        computer = 'X';
+        human = '<span class="fa fa-circle-o"></span>';
+        computer = '<span class="fa fa-times"></span>';
     }
 
     startGame();
+}
+
+// shows the gameOver modal
+function declareWinner(message) {
+    document.getElementById('message').innerHTML = message;
+    $('#gameOverModal').modal('show');
 }

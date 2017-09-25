@@ -5,11 +5,12 @@
   <meta charset="UTF-8">
   <title>Tic Tac Toe</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
+  <!-- Select symbol modal -->
   <div class="modal fade" id="gameModal" tabindex="-1" role="dialog" aria-labelledby="gameModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -24,8 +25,29 @@
             <h5>It's time to choose your symbol.</h5>
         </div>
         <div class="modal-footer">
-          <button id="X" type="button" class="btn" data-dismiss="modal" onclick="setSymbol(this.id)">X</button>
-          <button id="0" type="button" class="btn" data-dismiss="modal" onclick="setSymbol(this.id)">0</button>
+          <button id="X" type="button" class="btn" data-dismiss="modal" onclick="setSymbol(this.id)"><span class="fa fa-times"></span></button>
+          <button id="0" type="button" class="btn" data-dismiss="modal" onclick="setSymbol(this.id)"><span class="fa fa-circle-o"></span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Game over modal -->
+  <div class="modal fade" id="gameOverModal" tabindex="-1" role="dialog" aria-labelledby="gameOverLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="gameOverLabel">Tic Tac Toe</h2>
+        </div>
+        <div class="modal-body">
+          <h3 id="message"></h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-dismiss="modal" onclick="startGame()">
+              <span class="fa fa-repeat"></span>
+          </button>
+          <button type="button" class="btn" data-dismiss="modal">
+              <span class="fa fa-times-circle"></span>
+          </button>
         </div>
       </div>
     </div>
@@ -48,10 +70,6 @@
       <td id="8"></td>
     </tr>
   </table>
-  <div class="endgame">
-    <p class="text"></p>
-  </div>
-  <button onclick="startGame()">Replay</button>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="app.js"></script>
