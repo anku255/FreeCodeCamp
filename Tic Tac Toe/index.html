@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Tic Tac Toe</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+  <div class="modal fade" id="gameModal" tabindex="-1" role="dialog" aria-labelledby="gameModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h2 class="modal-title" id="gameModalLabel">Tic Tac Toe</h2>
+        </div>
+        <div class="modal-body">
+          <h3>Welcome to Tic Tac Toe!</h4>
+            <h5>It's time to choose your symbol.</h5>
+        </div>
+        <div class="modal-footer">
+          <button id="X" type="button" class="btn" data-dismiss="modal" onclick="setSymbol(this.id)">X</button>
+          <button id="0" type="button" class="btn" data-dismiss="modal" onclick="setSymbol(this.id)">0</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <table>
     <tr>
       <td id="0"></td>
@@ -27,6 +52,9 @@
     <p class="text"></p>
   </div>
   <button onclick="startGame()">Replay</button>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="app.js"></script>
 </body>
+
 </html>

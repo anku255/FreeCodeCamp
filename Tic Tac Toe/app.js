@@ -11,11 +11,15 @@ let winningComb = [
     [0, 4, 8],
     [2, 4, 6]
 ];
-
 let cells = document.querySelectorAll('td');
-startGame();
+
+window.onload = function () {
+    startGame();
+};
 
 function startGame() {
+    // Show the modal
+    $('#gameModal').modal('show');
     // Initialize the mainBoard from 0-8
     mainBoard = Array.from(Array(9).keys());
     // hide endgame message
@@ -173,4 +177,17 @@ function miniMax(newBoard, player) {
         }
     }
     return bestMove;
+}
+
+// sets the player's symbol and then starts the game
+function setSymbol(id) {
+    if (id === 'X') {
+        human = 'X';
+        computer = '0';
+    } else {
+        human = '0';
+        computer = 'X';
+    }
+
+    startGame();
 }

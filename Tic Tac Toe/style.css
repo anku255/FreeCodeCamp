@@ -1,12 +1,57 @@
+/* Styling Modal */
+
+.modal-content {
+  background-color: #EAEAEA;
+}
+
+.modal-header {
+  background-color: #155AF0;
+  width: 100%;
+  height: 100%;
+  color: #EAEAEA;
+  text-align: center;
+}
+
+.modal-header button {
+  color: #EAEAEA;
+}
+
+.modal-header button:hover {
+  color: #EAEAEA;
+}
+
+.modal-body {
+  padding: 30px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.modal-footer {
+  padding: 10px 80px 10px 0px;
+}
+
+.modal-footer button {
+  background-color: white;
+  color: black;
+  width: 40%;
+  font-size: 2em;
+  transition: 500ms;
+}
+
+.modal-footer button:hover {
+  background-color: #08BDEB;
+  color: white;
+}
+
 table {
   border-collapse: collapse;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -150px;
   /* total height = 300px */
-  margin-left: -150px;
+  margin-top: -150px;
   /* total width = 300px */
+  margin-left: -150px;
 }
 
 table tr td {
