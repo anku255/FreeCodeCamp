@@ -3,14 +3,19 @@ table {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -150px; /* total height = 300px */
-  margin-left: -150px; /* total width = 300px */
+  margin-top: -150px;
+  /* total height = 300px */
+  margin-left: -150px;
+  /* total width = 300px */
 }
 
 table tr td {
   width: 100px;
   height: 100px;
   border: 2px solid black;
+  font-size: 70px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  text-align: center;
 }
 
 table tr:first-child td {
