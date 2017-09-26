@@ -1,7 +1,7 @@
 // An array to store sequence of boxes that user has to click
 let memoryArr = [];
 // Maximum size of sequence for user to win
-let winSize = 5;
+let winSize = 20;
 // boolean for strict mode
 let strictMode = false;
 // memoryArr[userIndex] gives the box that user has to click
