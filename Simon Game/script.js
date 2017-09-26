@@ -1,7 +1,7 @@
 // An array to store sequence of boxes that user has to click
 let memoryArr = [];
 // Maximum size of sequence for user to win
-let winSize = 2;
+let winSize = 5;
 // boolean for strict mode
 let strictMode = false;
 // memoryArr[userIndex] gives the box that user has to click
@@ -35,17 +35,15 @@ function startGame() {
     userIndex = 0;
     // reset title
     resetTitle();
-    // set onclick listener on each box
-    for (let box of BOXES) {
-        box.addEventListener('click', boxClicked, false);
-    }
     // call nextRound
     nextRound();
 }
 
 function nextRound() {
     if (!checkWin()) {
-    // reset userIndex for next round
+    // Remove onClickLister from all boxes
+        setOnClickLister(0);
+        // reset userIndex for next round
         userIndex = 0;
         memoryArr.push(randomBlock());
         //update count
@@ -62,6 +60,8 @@ function show() {
         i++;
         if (i >= memoryArr.length) {
             clearInterval(id);
+            // set onClicklister
+            setOnClickLister(1);
         }
     }, 1000);
 }
@@ -98,6 +98,7 @@ function boxClicked() {
 
 // repeats the last sequence
 function repeat() {
+    setOnClickLister(0);
     updateCount();
     userIndex = 0;
     show();
@@ -107,8 +108,7 @@ function repeat() {
 function checkWin() {
     if (userIndex === winSize) {
     // remove onClickLister from every box
-        for (let box of BOXES)
-            box.removeEventListener('click', boxClicked, false);
+        setOnClickLister(0);
         // change title message
         $('h1').html('YOU WON! <span id="message"></span>');
         $('#message').text('Click START to play again');
@@ -156,4 +156,16 @@ function updateCount() {
 function resetTitle() {
     $('h1').html('Simon Game <span id="message"></span>');
     $('#message').text('');
+}
+
+// sets onClickListener on all the boxes
+// parameter 1 -> add listeners
+// paramter 0 -> remove listeners
+function setOnClickLister(flag) {
+    for (let box of BOXES) {
+        if (flag)
+            box.addEventListener('click', boxClicked, false);
+        else
+            box.removeEventListener('click', boxClicked, false);
+    }
 }
