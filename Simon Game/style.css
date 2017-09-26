@@ -70,6 +70,7 @@ button:hover {
 .selected {
   color: white;
   background: steelblue;
+  text-decoration: underline;
 }
 
 .teal {

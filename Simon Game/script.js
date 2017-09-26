@@ -117,3 +117,14 @@ function playSound(boxId) {
 function randomBlock() {
     return Math.floor(Math.random() * 4);
 }
+
+// onClickLister for strict mode
+function toggleStrict(button) {
+    if (strictMode) {
+        strictMode = false;
+        button.classList.remove('selected');
+    } else {
+        strictMode = true;
+        button.classList.add('selected');
+    }
+}
