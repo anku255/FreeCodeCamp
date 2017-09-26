@@ -72,7 +72,9 @@ function boxClicked() {
         }
     } else {
     // user clicked the wrong box
-    // Play error sound
+    // display _ in count
+        countDOM.innerText = '_';
+        // Play error sound
         SOUNDS['ERROR'].play();
         setTimeout(function () {
             // check for strict mode
@@ -87,6 +89,7 @@ function boxClicked() {
 
 // repeats the last sequence
 function repeat() {
+    updateCount();
     userIndex = 0;
     show();
 }
