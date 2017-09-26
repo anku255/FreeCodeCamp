@@ -3,7 +3,7 @@ let memoryArr = [];
 // Maximum size of sequence for user to win
 let winSize = 2;
 // boolean for strict mode
-let strictMode = true;
+let strictMode = false;
 // memoryArr[userIndex] gives the box that user has to click
 let userIndex = 0;
 // current count
@@ -88,9 +88,9 @@ function boxClicked() {
         setTimeout(function () {
             // check for strict mode
             if (strictMode)
-                repeat();
-            else
                 startGame();
+            else
+                repeat();
         }, 1000);
 
     }
