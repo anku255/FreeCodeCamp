@@ -30,9 +30,11 @@ const CompColors = {
 };
 
 function startGame() {
-    // reset the memoryArray and userIndex
+    // reset the memoryArray, userIndex and title
     memoryArr = [];
     userIndex = 0;
+    // reset title
+    resetTitle();
     // set onclick listener on each box
     for (let box of BOXES) {
         box.addEventListener('click', boxClicked, false);
@@ -102,13 +104,15 @@ function repeat() {
     show();
 }
 
-// returns true if user has won
+// returns true if user has won also changes the title message
 function checkWin() {
     if (userIndex === winSize) {
     // remove onClickLister from every box
         for (let box of BOXES)
             box.removeEventListener('click', boxClicked, false);
-        console.log('You Won!');
+        // change title message
+        $('h1').html('YOU WON! <span id="message"></span>');
+        $('#message').text('Click START to play again');
         return true;
     }
     return false;
@@ -148,4 +152,10 @@ function toggleStrict(button) {
 function updateCount() {
     count = memoryArr.length;
     countDOM.innerText = count;
+}
+
+// reset the title
+function resetTitle() {
+    $('h1').html('Simon Game <span id="message"></span>');
+    $('#message').text('');
 }
