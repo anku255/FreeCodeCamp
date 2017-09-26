@@ -17,8 +17,6 @@ const SOUNDS = {
 // an array of all color boxes
 const BOXES = document.querySelectorAll('.box');
 
-startGame();
-
 function startGame() {
     // reset the memoryArray and userIndex
     memoryArr = [];
