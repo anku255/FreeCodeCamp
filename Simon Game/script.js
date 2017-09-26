@@ -60,7 +60,6 @@ function show() {
     let id = setInterval(function () {
         playSound(memoryArr[i]);
         i++;
-        console.log('i = ' + i + 'length: ' + memoryArr.length);
         if (i >= memoryArr.length) {
             clearInterval(id);
         }
@@ -122,7 +121,6 @@ function playSound(boxId) {
     boxId = Number(boxId);
     SOUNDS[boxId].play();
     let prevColor = jQuery(BOXES[boxId]).css('backgroundColor');
-    console.log(prevColor);
     jQuery(BOXES[boxId]).animate({
         backgroundColor: CompColors[boxId]
     }, 500, function () {
