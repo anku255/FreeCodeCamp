@@ -21,6 +21,14 @@ const SOUNDS = {
 // an array of all color boxes
 const BOXES = document.querySelectorAll('.box');
 
+// complementary colors
+const CompColors = {
+    '0': '#004d40',
+    '1': '#b71c1c',
+    '2': '#1a237e',
+    '3': '#827717'
+};
+
 function startGame() {
     // reset the memoryArray and userIndex
     memoryArr = [];
@@ -112,7 +120,7 @@ function playSound(boxId) {
     let prevColor = jQuery(BOXES[boxId]).css('backgroundColor');
     console.log(prevColor);
     jQuery(BOXES[boxId]).animate({
-        backgroundColor: '#93979b' //to change
+        backgroundColor: CompColors[boxId]
     }, 500, function () {
         $(this).animate({
             backgroundColor: prevColor
