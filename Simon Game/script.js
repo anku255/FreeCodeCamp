@@ -6,6 +6,10 @@ let winSize = 2;
 let strictMode = true;
 // memoryArr[userIndex] gives the box that user has to click
 let userIndex = 0;
+// current count
+let count = 0;
+// DOM element for count
+let countDOM = document.getElementById('countDOM');
 // An Object to store all the sounds
 const SOUNDS = {
     '0': new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
@@ -34,6 +38,8 @@ function nextRound() {
     // reset userIndex for next round
         userIndex = 0;
         memoryArr.push(randomBlock());
+        //update count
+        updateCount();
         show();
     }
 }
@@ -125,4 +131,10 @@ function toggleStrict(button) {
         strictMode = true;
         button.classList.add('selected');
     }
+}
+
+// updates the count variable and countDOM
+function updateCount() {
+    count = memoryArr.length;
+    countDOM.innerText = count;
 }

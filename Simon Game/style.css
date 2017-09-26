@@ -43,7 +43,7 @@ button:hover {
   background: steelblue;
 }
 
-#score {
+#count {
   margin: 0 3%;
   display: inline-block;
   font-weight: 800;
