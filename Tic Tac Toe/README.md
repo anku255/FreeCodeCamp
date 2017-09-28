@@ -1,4 +1,4 @@
-#Tic Tac Toe
+# Tic Tac Toe
 
 * Select your symbol and start playing!
 * Computer's move is determined by minimax so it's unbeatable.
