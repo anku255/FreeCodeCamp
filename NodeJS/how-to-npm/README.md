@@ -1,0 +1,1 @@
+Getting familiar with npm using how-to-npm package.

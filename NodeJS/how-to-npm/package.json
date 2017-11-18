@@ -1,0 +1,17 @@
+{
+  "name": "@anku255/how-to-npm",
+  "version": "1.0.1",
+  "description": "An example app to get familiar with npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "Ankit Tiwari",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anku255/FreeCodeCamp/NPM/how-to-npm"
+  }
+}
