@@ -7,10 +7,10 @@ let dirName = process.argv[2];
 let ext = process.argv[3];
 
 filterFiles(dirName, ext, function(err, fileNames){
-    if (err)
-        return console.log(err);
+  if (err)
+    return console.log(err);
 
-    fileNames.forEach(file => {
-        console.log(file);
-    });
+  fileNames.forEach(file => {
+    console.log(file);
+  });
 });

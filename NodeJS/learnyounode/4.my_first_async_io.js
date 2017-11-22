@@ -6,8 +6,8 @@ let fs = require('fs');
 let filePath = process.argv[2];
 
 fs.readFile(filePath, 'utf8', function(err, data) {
-    if(err)
-        return console.log(err);
-    let lines = data.split('\n').length - 1;
-    console.log(lines);
+  if(err)
+    return console.log(err);
+  let lines = data.split('\n').length - 1;
+  console.log(lines);
 });

@@ -11,25 +11,25 @@ let count = 0;
 
 function httpGet(index) {
 
-    let result = '';
-    http.get(urls[index], (res) => {
-        res.setEncoding('utf8');
-        res.on('data', (data) => {
-            result += data;
-        });
-        res.on('end', () => {
-            results[index] = result;
-            count++;
-            if (count === 3)
-                printData();
-        });
+  let result = '';
+  http.get(urls[index], (res) => {
+    res.setEncoding('utf8');
+    res.on('data', (data) => {
+      result += data;
     });
+    res.on('end', () => {
+      results[index] = result;
+      count++;
+      if (count === 3)
+        printData();
+    });
+  });
   
 }
 
 for(let i=0; i<urls.length; i++)
-    httpGet(i);
+  httpGet(i);
 
 function printData() {
-    results.forEach((data) => console.log(data));
+  results.forEach((data) => console.log(data));
 }
