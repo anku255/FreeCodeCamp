@@ -1,0 +1,14 @@
+{
+  "name": "expressworks",
+  "version": "1.0.0",
+  "description": "solution to excercises on expressworks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ankit Tiwari",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
