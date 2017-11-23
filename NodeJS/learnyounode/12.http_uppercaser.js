@@ -9,7 +9,6 @@ let port = process.argv[2];
 
 let server = http.createServer((req, res) => {
   if(req.method === 'POST')
-    // console.log(toUppercase(res));
     req.pipe(map((chunk) => chunk.toString().toUpperCase())).pipe(res);
 });
 
