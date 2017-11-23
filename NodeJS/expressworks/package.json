@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "crypto": "^1.0.1",
     "express": "^4.16.2",
     "pug": "^2.0.0-rc.4",
     "stylus": "^0.54.5"
