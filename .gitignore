@@ -1,3 +1,5 @@
-.vscode/tasks.json
+.vscode
 .eslintrc.json
 node_modules
+.prettierrc
+API Projects/package-lock.json

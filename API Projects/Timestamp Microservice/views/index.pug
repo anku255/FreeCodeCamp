@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title Timestamp Microservice
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto')
+    link(rel='stylesheet' href='style.css')
+    link(rel='shortcut icon' type='image/x-icon' href='https://cdn.hyperdev.com/us-east-1%3A52a203ff-088b-420f-81be-45bf559d01b1%2Ffavicon.ico')
+
+  body
+    .container
+      h1  Timestamp Microservice
+      blockquote
+        | User stories:
+        ul
+          li  1) I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016)
+          li  2) If it does, it returns both the Unix timestamp and the natural language form of that date.
+          li  3) If it does not contain a date or Unix timestamp, it returns null for those properties.
+
+      h3 Example Usage:
+      code https://timestamp-fcc-.glitch.me/Aug%2015,%202017
+      br
+      code https://timestamp-fcc-.glitch.me/1502735400000,
+
+      h3 Example Output:
+      code { "unix": 1502735400000,, "natural": "August 15, 2017" }
