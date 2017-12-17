@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title URL Shortener Microservice
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css")
+    link(rel='stylesheet' href='style.css')
+    link(rel='shortcut icon' type='image/x-icon' href='https://cdn.hyperdev.com/us-east-1%3A52a203ff-088b-420f-81be-45bf559d01b1%2Ffavicon.ico')
+
+  body
+    .container
+      h1.center URL Shortener
+      .container.form
+          input(type='text' name='url' id='url' placeholder='Enter URL')
+          button(class='btn submit center') SHORTEN URL
+          button(class='btn copy center') COPY URL
+
+  script(type='text/javascript' src='/javascript/frontend.js')

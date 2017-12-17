@@ -1,0 +1,12 @@
+.container .form {
+  text-align: center;
+}
+
+h1 {
+  margin-top: 5%;
+  margin-bottom: 15%;
+}
+
+button.copy {
+  display: none;
+}

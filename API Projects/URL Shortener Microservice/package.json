@@ -1,0 +1,21 @@
+{
+  "name": "url_shortener",
+  "dependencies": {
+    "express": "^4.14.0",
+    "pug": "2.0.0-beta6",
+    "mongoose": "4.8.7",
+    "dotenv": "4.0.0"
+  },
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": ">= 7.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url":
+      "https://github.com/anku255/FreeCodeCamp/tree/master/API%20Projects/Timestamp%20Microservice"
+  }
+}

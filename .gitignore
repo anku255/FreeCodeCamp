@@ -3,3 +3,4 @@
 node_modules
 .prettierrc
 API Projects/package-lock.json
+variables.env
