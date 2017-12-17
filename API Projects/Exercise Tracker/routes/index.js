@@ -10,5 +10,6 @@ router.get('/', (req, res) => {
 });
 
 router.post('/api/exercise/new-user', catchErrors(apiController.createUser));
+router.get('/api/exercise/users', catchErrors(apiController.getUsers));
 
 module.exports = router;
