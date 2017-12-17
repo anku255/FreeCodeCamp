@@ -10,8 +10,20 @@ html
     .container
       h1.center Exercise Tracker
 
-      form(action='/api/exercise/new-user' method='POST')
-        label(for='username') Username
-        input(type='text' id='username' name='username')
-        input(type='submit' value='Create User' class='btn')
+      .addUser
+        form(action='/api/exercise/new-user' method='POST')
+          label(for='username') Username
+          input(type='text' id='username' name='username')
+          input(type='submit' value='Create User' class='btn')
 
+      .addExercise
+        form(action='/api/exercise/add' method='POST')
+          label(for='userId') User ID
+          input(type='text' name='userId' id='userId' placeholder='User ID')
+          label(for='description') Description
+          input(type='text' name='description' id='description' placeholder='Description')
+          label(for='duration') Duration
+          input(type='Number' name='duration' id='duration' placeholder='Duration')
+          label(for='date') Date (Optional)
+          input(type='text' name='date' id='date' placeholder='Date (YYYY-MM-DD)')
+          input(type='submit' value='Add' class='btn')
