@@ -45,3 +45,46 @@ exports.addExercise = async (req, res) => {
 
   res.json(exercise);
 };
+
+exports.getExercises = async (req, res) => {
+  // find user
+  const user = await User.findOne({ _id: req.query.userId });
+  if (!user) {
+    return res.send('<p>Invalid User ID</p>');
+  }
+
+  // handle to and from date
+  let from = new Date(req.query.from);
+  from = from == 'Invalid Date' ? 0 : from.getTime();
+  let to = new Date(req.query.to);
+  to = to == 'Invalid Date' ? Date.now() : to.getTime();
+
+  // check limit
+  const limit = parseInt(req.query.limit) || 20;
+
+  // find exercises in given range
+  const exercises = await Exercise.find({
+    userId: user._id,
+    date: {
+      $gt: from,
+      $lt: to
+    }
+  })
+    .sort({ date: -1 })
+    .limit(limit);
+
+  // construct the proper output
+  const response = {
+    _id: user._id,
+    username: user.username,
+    count: exercises.length,
+    log: exercises.map(exercise => ({
+      description: exercise.description,
+      duration: exercise.duration,
+      date: new Date(exercise.date).toDateString()
+    }))
+  };
+
+  // send it
+  res.json(response);
+};
