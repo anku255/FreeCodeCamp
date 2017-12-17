@@ -1,6 +1,7 @@
 const express = require('express');
 const routes = require('./routes/index');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 // import environmental variables from our variables.env file
 require('dotenv').config({ path: 'variables.env' });
@@ -21,6 +22,10 @@ app.set('view engine', 'pug');
 
 // serve static files from public folder
 app.use(express.static(__dirname + '/public'));
+
+// Takes the raw requests and turns them into usable properties on req.body
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // handle routes
 app.use('/', routes);

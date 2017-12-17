@@ -10,3 +10,8 @@ html
     .container
       h1.center Exercise Tracker
 
+      form(action='/api/exercise/new-user' method='POST')
+        label(for='username') Username
+        input(type='text' id='username' name='username')
+        input(type='submit' value='Create User' class='btn')
+
