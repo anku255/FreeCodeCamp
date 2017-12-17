@@ -1,5 +1,7 @@
 # Timestamp Microservice
 
+[Click Here!](https://little-url.glitch.me/) to see the live app. You can either use the UI or the API (given below) to create little urls.
+
 ## Example Creation usage:
 
 `https://little-url.glitch.me/new/https://www.google.com`
