@@ -8,4 +8,6 @@ router.get('/', (req, res) => {
   res.render('index');
 });
 
+router.post('/api/upload', apiController.upload,  apiController.uploadFile);
+
 module.exports = router;
