@@ -1,5 +1,9 @@
+h1 {
+  margin-bottom: 100px;
+}
+
 form {
   text-align: center;
   width: 80%;
-  margin: 0 auto;
+  margin: 40px auto;
 }
