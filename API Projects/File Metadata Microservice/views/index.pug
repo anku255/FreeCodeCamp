@@ -2,10 +2,21 @@ doctype html
 html
   head
     title File Metadata Microservice
-    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css")
     link(rel='stylesheet' href='style.css')
     link(rel='shortcut icon' type='image/x-icon' href='https://cdn.hyperdev.com/us-east-1%3A52a203ff-088b-420f-81be-45bf559d01b1%2Ffavicon.ico')
 
   body
     .container
       h1.center File Metadata Microservice
+
+      form(action='/api/upload' method='POST' enctype='mulitpart/form-data')
+        .file-field.input-field
+          .btn
+            span File
+            input(type='file' name='upfile')
+          .file-path-wrapper
+            input(class='file-path validate' type='text')
+        input(type='submit' value='Upload' class='btn')
+
+    script(type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js')
